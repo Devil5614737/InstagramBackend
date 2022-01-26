@@ -49,7 +49,7 @@ router.post("/userpost",(req, res) => {
 
 router.get('/allpost',(req,res)=>{
     Post.find()
-    .populate("postedBy","_id username")
+    .populate("postedBy","_id username pic")
     .populate("comments.postedBy","_id username")
  
     .then((posts)=>{
